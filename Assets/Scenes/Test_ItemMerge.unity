@@ -306,7 +306,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantObj: {fileID: 6271653399287169920, guid: a7ccba6e134365045b6b8ae6001e5e88, type: 3}
-  MergeNumber: []
+  InstantPos: {fileID: 0}
+  MergeNumber: 
+  MergeObj: []
   BoxNumber: 0
 --- !u!50 &247726371
 Rigidbody2D:
@@ -452,6 +454,37 @@ Transform:
   - {fileID: 570539661}
   m_Father: {fileID: 1305508500}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &299943874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 299943875}
+  m_Layer: 0
+  m_Name: InstansPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &299943875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299943874}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.4, y: 0.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &402304593
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +518,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantObj: {fileID: 4442316835089612791, guid: b88dd585680abff44b795ded28179bd2, type: 3}
-  MergeNumber:
+  InstantPos: {fileID: 299943874}
+  MergeNumber: 0d000000
+  MergeObj:
   - {fileID: 5638218922639908714, guid: 627f64749f434244f9d52c04a147d4ce, type: 3}
   BoxNumber: 1
 --- !u!50 &402304595
@@ -910,7 +945,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantObj: {fileID: 4603254861276324536, guid: 8f87d9aa092d4ad4391f5e3c2ddd85e4, type: 3}
-  MergeNumber: []
+  InstantPos: {fileID: 0}
+  MergeNumber: 
+  MergeObj: []
   BoxNumber: 0
 --- !u!50 &1219248879
 Rigidbody2D:
@@ -1380,7 +1417,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantObj: {fileID: 2426956544152694206, guid: e5b6c67cd80664747a450b1f9318d50d, type: 3}
-  MergeNumber: []
+  InstantPos: {fileID: 0}
+  MergeNumber: 
+  MergeObj: []
   BoxNumber: 0
 --- !u!50 &1926820569
 Rigidbody2D:
@@ -1708,3 +1747,4 @@ SceneRoots:
   - {fileID: 1300543891}
   - {fileID: 54484261}
   - {fileID: 2010043802}
+  - {fileID: 299943875}

@@ -6,7 +6,11 @@ public class ItemBox : MonoBehaviour
     //生成するオブジェクト
     [SerializeField] GameObject instantObj;
 
-    [SerializeField] GameObject[] MergeNumber;
+    //生成場所
+    [SerializeField] GameObject InstantPos;
+
+    [SerializeField] int[] MergeNumber;
+    [SerializeField] GameObject[] MergeObj;
     [SerializeField] int BoxNumber;
 
     private void OnMouseDown()
@@ -25,14 +29,17 @@ public class ItemBox : MonoBehaviour
         if (collision.gameObject.TryGetComponent<Mergeitem>(out var mergeitem))
         {
            getItemNum= mergeitem.GetNum();
-            Debug.Log(getItemNum);
         }
 
         if (getItemNum == 0) return;
+        int instantNum = BoxNumber * 10 + getItemNum;
+        Debug.Log(instantNum);
         //取得した値と合わせてアイテムを生成できるか調べる
         for (int i = 0; i < MergeNumber.Length; i++)
         {
-
+            if (MergeNumber[i] == instantNum) {
+                Instantiate(MergeObj[i], InstantPos.transform.position, Quaternion.identity);
+            }
         }
 
     }
