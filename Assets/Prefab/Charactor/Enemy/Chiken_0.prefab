@@ -201,21 +201,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8378468594358431082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ad1631f08c55fc46a75425787e9710b, type: 3}
+  m_Script: {fileID: 11500000, guid: 326477a6687b1c2498c80df329e9829d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ally: 0
-  speed: 0.5
-  hp: 10
+  speed: 2
+  hp: 1
   coolTime: 0
-  attackPower: 1
+  attackPower: 5
   DamagePre: {fileID: 4028270255119797780, guid: b62c2186e4809a74ab7dd1a4c59c8030, type: 3}
   isStop: 0
   attackTarget: {fileID: 0}
   anim: {fileID: 111694003382832052}
-  DropItem:
-  - {fileID: 5968803913284971615, guid: 28bf1935f9557f048bbdcf0b4f1206b8, type: 3}
-  - {fileID: 6302830698289954543, guid: baafb36b5411ce34c80a2924e8683506, type: 3}
 --- !u!50 &7584539195635770817
 Rigidbody2D:
   serializedVersion: 5

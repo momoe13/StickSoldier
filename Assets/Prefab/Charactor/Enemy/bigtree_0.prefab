@@ -123,21 +123,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 3167825287689010028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efad86e1190ba904d8a7552284eb16d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 326477a6687b1c2498c80df329e9829d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ally: 0
-  speed: 1
-  hp: 30
-  coolTime: 3
-  attackPower: 2
-  DamagePre: {fileID: 4028270255119797780, guid: b62c2186e4809a74ab7dd1a4c59c8030, type: 3}
+  speed: 0
+  hp: 0
+  coolTime: 0
+  attackPower: 0
+  DamagePre: {fileID: 0}
   isStop: 0
   attackTarget: {fileID: 0}
-  anim: {fileID: 9150966375928588794}
-  DropItem:
-  - {fileID: 0}
-  Clar: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!61 &9223170486925227277
 BoxCollider2D:
   m_ObjectHideFlags: 0
