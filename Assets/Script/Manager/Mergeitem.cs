@@ -11,24 +11,17 @@ public class Mergeitem : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
     private void FixedUpdate()
-    {   //マウス追従
+    {
+        //マウス追従
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-       // rb.MovePosition(mousePos);
-       transform.position = mousePos;  
+        // rb.MovePosition(mousePos);
+        transform.position = mousePos;
     }
-
+    //private void OnMouseDrag()
+    //{
+    //}
     private void OnMouseUp()
     {
-        //当たり判定On
-
-        //Collider2D[] hits = Physics2D.OverlapPointAll(transform.position);
-        //foreach (var hit in hits)
-        //{
-        //    if (hit.CompareTag("ItemBox"))
-        //    {
-        //        Debug.Log("合成成功！");
-        //    }
-        //}
         rb.bodyType = RigidbodyType2D.Kinematic;
         StartCoroutine("Destroy");
     }
