@@ -6,19 +6,19 @@ public class ItemBox : MonoBehaviour
     //生成するオブジェクト
     [SerializeField] GameObject instantObj;
 
-    //生成場所
-    [SerializeField] GameObject InstantPos;
 
     [SerializeField] int[] MergeNumber;
     [SerializeField] GameObject[] MergeObj;
     [SerializeField] int BoxNumber;
 
+    //----------追加
+    [SerializeField] Generater generate;
+    //----------追加ここまで
+
     private void OnMouseDown()
     {
         Instantiate(instantObj, this.transform.position, Quaternion.identity);
     }
-
-    //
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.name);
@@ -31,14 +31,22 @@ public class ItemBox : MonoBehaviour
            getItemNum= mergeitem.GetNum();
         }
 
-        if (getItemNum == 0) return;
-        int instantNum = BoxNumber * 10 + getItemNum;
+        if (getItemNum == 0) return; 
+        //----------追加
+        int BoxNum = BoxNumber;
+        if (BoxNum > getItemNum) { (BoxNum, getItemNum) = (getItemNum, BoxNum); }
+        //----------追加ここまで
+
+        int instantNum = BoxNum * 10 + getItemNum;
         Debug.Log(instantNum);
         //取得した値と合わせてアイテムを生成できるか調べる
         for (int i = 0; i < MergeNumber.Length; i++)
         {
-            if (MergeNumber[i] == instantNum) {
-                Instantiate(MergeObj[i], InstantPos.transform.position, Quaternion.identity);
+            if (MergeNumber[i] == instantNum)
+            {
+                //----------追加
+                generate.PLGeneration(instantNum);
+                //----------追加ここまで
             }
         }
 

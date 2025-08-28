@@ -45,7 +45,7 @@ public class GenerationManager : MonoBehaviour
             if (BossTime < gameTime)
             {
                 //ƒ{ƒX¶¬
-                Instantiate(CreatePrefabs[5], GetEnemySpawnPos(), Quaternion.identity);
+                Instantiate(CreatePrefabs[3], GetEnemySpawnPos(), Quaternion.identity);
                 isBossGenerated = true;
                 return;
             }
@@ -85,25 +85,5 @@ public class GenerationManager : MonoBehaviour
     private Vector2 GetEnemySpawnPos()
     {
         return new Vector2(this.transform.position.x , this.transform.position.y);
-    }
-
-
-    public void SetNum(int num)
-    {
-        //23,24,34
-        switch (num)
-        {
-            case 23:
-                num = 9;
-                break;
-            case 24:
-                num = 10;
-                break;
-            case 34:
-                num = 11;
-                break;
-        }
-        Type = num;
-        GeneratFlg = true;
     }
 }

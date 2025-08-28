@@ -24,7 +24,6 @@ public class Character_Controller : MonoBehaviour
     [SerializeField] GameObject DamagePre;
     Canvas     DamageCanvas;
 
-    [SerializeField]
     protected bool isStop = false;
     bool isCastel = false;
 

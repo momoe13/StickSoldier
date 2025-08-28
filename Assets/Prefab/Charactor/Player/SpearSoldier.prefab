@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 8750123228513238170}
   - component: {fileID: 4190238327775807969}
   m_Layer: 7
-  m_Name: spearsoldier 1_0
+  m_Name: SpearSoldier
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,20 +179,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2324361333881543856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ad1631f08c55fc46a75425787e9710b, type: 3}
+  m_Script: {fileID: 11500000, guid: 326477a6687b1c2498c80df329e9829d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ally: 1
   speed: 1
-  hp: 3
+  hp: 2
   coolTime: 2
-  attackPower: 2
+  attackPower: 5
   DamagePre: {fileID: 4028270255119797780, guid: b62c2186e4809a74ab7dd1a4c59c8030, type: 3}
   isStop: 0
   attackTarget: {fileID: 0}
   anim: {fileID: 4407863440503571432}
-  DropItem:
-  - {fileID: 0}
 --- !u!95 &4407863440503571432
 Animator:
   serializedVersion: 7
