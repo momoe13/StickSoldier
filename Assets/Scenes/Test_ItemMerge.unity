@@ -2178,6 +2178,8 @@ MonoBehaviour:
   CreatePrefabs:
   - {fileID: 8378468594358431082, guid: 9b30e572656258c489671d178aec6f78, type: 3}
   - {fileID: 8695807413007316508, guid: ba878537509cb97469bce302ed5dc3bc, type: 3}
+  - {fileID: 8695807413007316508, guid: ba878537509cb97469bce302ed5dc3bc, type: 3}
+  - {fileID: 3167825287689010028, guid: 66a0b466d1eeaba4284fc1afc8d852a8, type: 3}
   EnemyBox:
   - {fileID: 0}
   - {fileID: 0}
