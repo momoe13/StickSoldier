@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7401966694017562179}
   - component: {fileID: -6098361248327787269}
   m_Layer: 0
-  m_Name: Wood_0
+  m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2067898546876541913, guid: 820c24cff26e7f24a9b1d4371062c868, type: 3}
+  m_Sprite: {fileID: -9041226657699125776, guid: 9685b236014a7df46968688f8959e997, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cba79617e4b7934eae953ff14268404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2850659755253429343, guid: a7ccba6e134365045b6b8ae6001e5e88, type: 3}
   ItemNum: 1
 --- !u!50 &-7401966694017562179
 Rigidbody2D:
@@ -169,7 +168,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.535, y: 2.135}
+    oldSize: {x: 3.6599998, y: 5.35}
     newSize: {x: 5.07, y: 4.27}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
