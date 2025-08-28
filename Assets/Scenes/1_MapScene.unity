@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 1066861679}
   - component: {fileID: 1066861678}
   - component: {fileID: 1066861677}
-  - component: {fileID: 1066861680}
+  - component: {fileID: 1066861682}
   - component: {fileID: 1066861681}
   m_Layer: 5
   m_Name: StartButton
@@ -558,9 +558,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051435092}
+      - m_Target: {fileID: 2051435090}
         m_TargetAssemblyTypeName: StageSelect, Assembly-CSharp
-        m_MethodName: StageStart
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -608,18 +608,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066861675}
   m_CullTransparentMesh: 1
---- !u!114 &1066861680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066861675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4278d7d25a9d4a34a9aa901762c407f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1066861681
 Animator:
   serializedVersion: 7
@@ -642,6 +630,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1066861682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066861675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb492ffbfe95dd548a23fd3a28cc037c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1791182334
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,7 +912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1802480bfad363e498c040d5c3476c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageNum: 0
 --- !u!61 &1933342202
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1002,12 +1001,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2051435090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08843ce6493273e41bc0fbec54d22188, type: 3}
+  m_Script: {fileID: 11500000, guid: c030ae327e316e74f9715106f4a04db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   StageObj:
-  - {fileID: 987864067}
-  - {fileID: 103020710}
+  - {fileID: 1933342199}
+  - {fileID: 2065645357}
   currentStage: 0
 --- !u!1 &2065645357
 GameObject:
@@ -1055,7 +1054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1802480bfad363e498c040d5c3476c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageNum: 1
 --- !u!61 &2065645360
 BoxCollider2D:
   m_ObjectHideFlags: 0
