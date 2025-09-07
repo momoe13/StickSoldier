@@ -8,12 +8,10 @@ public class ItemBox : MonoBehaviour
 
 
     [SerializeField] int[] MergeNumber;
-    [SerializeField] GameObject[] MergeObj;
+
     [SerializeField] int BoxNumber;
 
-    //----------’Ç‰Á
-    [SerializeField] Generater generate;
-    //----------’Ç‰Á‚±‚±‚Ü‚Å
+    [SerializeField] AllyGenerater generate;
 
     private void OnMouseDown()
     {
@@ -32,10 +30,9 @@ public class ItemBox : MonoBehaviour
         }
 
         if (getItemNum == 0) return; 
-        //----------’Ç‰Á
         int BoxNum = BoxNumber;
         if (BoxNum > getItemNum) { (BoxNum, getItemNum) = (getItemNum, BoxNum); }
-        //----------’Ç‰Á‚±‚±‚Ü‚Å
+
 
         int instantNum = BoxNum * 10 + getItemNum;
         Debug.Log(instantNum);
@@ -44,9 +41,7 @@ public class ItemBox : MonoBehaviour
         {
             if (MergeNumber[i] == instantNum)
             {
-                //----------’Ç‰Á
                 generate.PLGeneration(instantNum);
-                //----------’Ç‰Á‚±‚±‚Ü‚Å
             }
         }
 

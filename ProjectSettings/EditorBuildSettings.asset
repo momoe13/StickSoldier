@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/1_MapScene.unity
     guid: 15232659213371647ad6a59843fecd48
   - enabled: 1
+    path: Assets/Scenes/Test_ItemMerge.unity
+    guid: 4ea3a7a9c7471704480a17295a168c9d
+  - enabled: 1
     path: Assets/Scenes/2_GameScene.unity
     guid: dd5cc0f45c686104da412af3f155bd40
   m_configObjects:

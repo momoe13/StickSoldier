@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6951544018782468150}
-  - component: {fileID: 6924100202309862586}
+  - component: {fileID: 4759517240385657024}
   - component: {fileID: 8466237105421111259}
   m_Layer: 0
   m_Name: Generater
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6924100202309862586
+--- !u!114 &4759517240385657024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4567471457377926941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eabb48473be7bc34f83fd3456e2bccfd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3209c84c9390a77409dea32435504e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   GeneratFlg: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
   CreateWeapon:
   - {fileID: 2324361333881543856, guid: 89514e01c291f8541a9664964631bca2, type: 3}
   Area:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8748285137575105214, guid: 64c939c13723d2e45a2e94ad3ace61b7, type: 3}
+  - {fileID: 8748285137575105214, guid: 17abc17990cf146478cbee372c032a9a, type: 3}
 --- !u!50 &8466237105421111259
 Rigidbody2D:
   serializedVersion: 5

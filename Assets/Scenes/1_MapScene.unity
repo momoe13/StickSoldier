@@ -558,9 +558,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051435090}
+      - m_Target: {fileID: 2051435092}
         m_TargetAssemblyTypeName: StageSelect, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: StageStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -909,9 +909,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1933342199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1802480bfad363e498c040d5c3476c9d, type: 3}
+  m_Script: {fileID: 11500000, guid: f17a597f9656f354292ebb4786d462c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stageSelect: {fileID: 2051435092}
+  stageNum: 0
 --- !u!61 &1933342202
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1051,9 +1053,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2065645357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1802480bfad363e498c040d5c3476c9d, type: 3}
+  m_Script: {fileID: 11500000, guid: f17a597f9656f354292ebb4786d462c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stageSelect: {fileID: 2051435092}
+  stageNum: 1
 --- !u!61 &2065645360
 BoxCollider2D:
   m_ObjectHideFlags: 0

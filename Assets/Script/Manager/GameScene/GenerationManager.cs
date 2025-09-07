@@ -4,14 +4,13 @@ using UnityEngine;
 public class GenerationManager : MonoBehaviour
 {
     int Type;
-    bool GeneratFlg= false;
     [SerializeField]//生成アイテム
     GameObject[] CreatePrefabs;
 
     int maxEne=3;
     float gameTime= 0;
 
-    float BossTime = 30.0f;
+    float BossTime = 10.0f;
 
     //敵キャラの生成数を保存する
     [SerializeField]
@@ -20,23 +19,22 @@ public class GenerationManager : MonoBehaviour
 
     //ボスを生成したか
     bool isBossGenerated = false;
-
+    bool isBossDie = false;
     // TODO : ミサイルをとりあえず動かすための追加！！後で変えましょう
     public IReadOnlyList<GameObject> ActiveEnemyList => EnemyBox;
     
 
-    //public Boss bossTest;
-    //public void TestGenerateBoss()
-    //{
-    //    //ボス生成
-    //    var obj = Instantiate(CreatePrefabs[5], GetEnemySpawnPos(), Quaternion.identity);
-    //    bossTest = obj.GetComponent<Boss>(); 
-    //}
-
     private void Update()
     {
-        //プレイヤーのキャラクターを生成
-        if (GeneratFlg) PLGeneration();
+        if(isBossDie)
+        {
+            for (int i = 0; i < EnemyBox.Count; i++)
+            {
+                //敵全消し
+                Destroy(EnemyBox[i]);   
+            }
+            return;
+        }
 
         //ボスの生成
         if(!isBossGenerated)
@@ -64,14 +62,6 @@ public class GenerationManager : MonoBehaviour
         }
     }
 
-    //プレイヤーキャラ生成
-    private void PLGeneration()
-    {
-        Instantiate(CreatePrefabs[Type], this.transform.position, Quaternion.identity);
-        GeneratFlg = false;
-
-    }
-
     //敵生成
     private void EnemyGeneration()
     {
@@ -85,5 +75,10 @@ public class GenerationManager : MonoBehaviour
     private Vector2 GetEnemySpawnPos()
     {
         return new Vector2(this.transform.position.x , this.transform.position.y);
+    }
+
+    public void BossDie()
+    {
+        isBossDie = true;
     }
 }

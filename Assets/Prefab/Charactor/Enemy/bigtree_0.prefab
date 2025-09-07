@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8421765075487102311}
   - component: {fileID: 2476705542242787629}
   - component: {fileID: 9150966375928588794}
-  - component: {fileID: 501455906460014727}
+  - component: {fileID: -8667843081719368114}
   - component: {fileID: 9223170486925227277}
   - component: {fileID: 3057895898619983860}
   m_Layer: 6
@@ -114,7 +114,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &501455906460014727
+--- !u!114 &-8667843081719368114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3167825287689010028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 326477a6687b1c2498c80df329e9829d, type: 3}
+  m_Script: {fileID: 11500000, guid: 25344a7d321d63a4f9ca150074dd54f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ally: 0
@@ -132,9 +132,9 @@ MonoBehaviour:
   coolTime: 5
   attackPower: 0
   DamagePre: {fileID: 4028270255119797780, guid: b62c2186e4809a74ab7dd1a4c59c8030, type: 3}
-  isStop: 0
   attackTarget: {fileID: 0}
   anim: {fileID: 9150966375928588794}
+  ClearText: {fileID: 2313309980954027664, guid: be63f06506022304a9f8e9e79326c9b5, type: 3}
 --- !u!61 &9223170486925227277
 BoxCollider2D:
   m_ObjectHideFlags: 0
