@@ -1,20 +1,21 @@
 using UnityEngine;
-using UnityEngine.UI;
-
-using UnityEngine.SceneManagement;
 public class Boss:Character_Controller
 {
-    GameObject ClearText;
-    [SerializeField] GenerationManager generationManager;
-    private void Awake()
+    [SerializeField]
+    GameManager gameManager;
+
+    private void Start()
     {
-        ClearText = GameObject.Find("Clear");
+      gameManager = GetComponentInParent<GameManager>();
     }
+    
     protected override void Die()
     {
+        Debug.Log("éÄÇÒÇæÅIÅIÅI");
         base.Die();
-        ClearText.GetComponent<Text>().color = new Color(0.2f, 0.2f, 0.2f, 1.0f);
-        generationManager.BossDie();
+        gameManager.Die(this.name);
+
         Destroy(this.gameObject);
     }
+
 }

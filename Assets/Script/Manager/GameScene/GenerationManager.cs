@@ -3,22 +3,21 @@ using UnityEngine;
 
 public class GenerationManager : MonoBehaviour
 {
-    int Type;
+    readonly int Type;
     [SerializeField]//生成アイテム
     GameObject[] CreatePrefabs;
 
+    [SerializeField]
     int maxEne=3;
-    float gameTime= 0;
+    float gameTime = 0;
 
-    float BossTime = 10.0f;
 
     //敵キャラの生成数を保存する
     [SerializeField]
     List<GameObject> EnemyBox;
     int eneType = 0;
 
-    //ボスを生成したか
-    bool isBossGenerated = false;
+    //ボスが死んだか
     bool isBossDie = false;
     // TODO : ミサイルをとりあえず動かすための追加！！後で変えましょう
     public IReadOnlyList<GameObject> ActiveEnemyList => EnemyBox;
@@ -35,20 +34,7 @@ public class GenerationManager : MonoBehaviour
             }
             return;
         }
-
-        //ボスの生成
-        if(!isBossGenerated)
-        {
-            gameTime += Time.deltaTime;
-            if (BossTime < gameTime)
-            {
-                //ボス生成
-                Instantiate(CreatePrefabs[3], GetEnemySpawnPos(), Quaternion.identity);
-                isBossGenerated = true;
-                return;
-            }
-        }
-
+       
         //nullになっている場所を掃除
         for (int i = 0; i < EnemyBox.Count; i++)
         {

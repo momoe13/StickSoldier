@@ -7,10 +7,10 @@ public class Character_Controller : MonoBehaviour
 {
     [Header("プレイヤーキャラには✔入れる")]
     [SerializeField] bool ally;//味方
-    int target_direction;      //進行方向
+    protected int target_direction;      //進行方向
 
     [Header("パラメーター")]
-    [SerializeField] float      speed;//速度
+    [SerializeField] protected float      speed;//速度
     [SerializeField] float          hp;
 
     [SerializeField] float coolTime;//クールタイム
@@ -24,6 +24,7 @@ public class Character_Controller : MonoBehaviour
     [SerializeField] GameObject DamagePre;
     Canvas     DamageCanvas;
 
+    [SerializeField]
     protected bool isStop = false;
     bool isCastel = false;
 
@@ -32,13 +33,12 @@ public class Character_Controller : MonoBehaviour
     Vector2 pos, scale;//死亡モーション用。
     bool DieFlg = false;//死亡判定
 
-    BoxCollider2D boxCollider;
 
     [Header("アニメーター")]
     [SerializeField] Animator anim;
 
 
-    private void Start()
+    private void Awake()
     {
         //実機なら右に向かって動く
         if (ally) { target_direction = 1; }
@@ -47,7 +47,6 @@ public class Character_Controller : MonoBehaviour
 
         scale= transform.localScale;
         DamageCanvas = GameObject.Find("DamageCanvas").GetComponent<Canvas>();
-        boxCollider = GetComponent<BoxCollider2D>();
         anim.SetBool("AttackFlg", false);
     }
 
@@ -73,8 +72,8 @@ public class Character_Controller : MonoBehaviour
         }
 
         Vector2 pos = transform.position;
-        transform.position = new Vector2(pos.x+(speed * target_direction*Time.deltaTime) , pos.y);
-
+        Vector2 newPos = new Vector2(pos.x+(speed * target_direction*Time.deltaTime) , pos.y);
+        transform.position = newPos;
     }
 
     protected virtual void Attack()
@@ -98,7 +97,7 @@ public class Character_Controller : MonoBehaviour
     }
     private void DamageTex(int dm)
     {
-        Vector2 pos = new Vector2(Random.Range(transform.position.x - 1, transform.position.x + 1),
+        Vector2 pos = new(Random.Range(transform.position.x - 1, transform.position.x + 1),
            Random.Range(transform.position.y - 1, transform.position.y + 1));
 
         //テキスト生成
@@ -126,6 +125,7 @@ public class Character_Controller : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.name);
 
         //if (Vector3.Distance(transform.position, collision.transform.position) <= boxCollider.size.x / 2.0f)
         //{
@@ -141,7 +141,6 @@ public class Character_Controller : MonoBehaviour
         {            //ターゲット名からターゲットとそのスクリプトを取得
             //attackTarget = GameObject.Find(collision.gameObject.name).GetComponent<Character_Controller>();
             attackTarget = collision.gameObject.GetComponentInParent<Character_Controller>();
-            Debug.Log(collision.gameObject.name);
             StartCoroutine("MovingCancel");
         }
         //}

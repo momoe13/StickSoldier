@@ -127,14 +127,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ally: 0
-  speed: 0.5
-  hp: 2
+  speed: 2
+  hp: 5
   coolTime: 5
   attackPower: 0
   DamagePre: {fileID: 4028270255119797780, guid: b62c2186e4809a74ab7dd1a4c59c8030, type: 3}
   attackTarget: {fileID: 0}
   anim: {fileID: 9150966375928588794}
-  ClearText: {fileID: 2313309980954027664, guid: be63f06506022304a9f8e9e79326c9b5, type: 3}
+  gameManager: {fileID: 0}
 --- !u!61 &9223170486925227277
 BoxCollider2D:
   m_ObjectHideFlags: 0
