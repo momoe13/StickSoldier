@@ -125,17 +125,15 @@ public class Character_Controller : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
 
         //if (Vector3.Distance(transform.position, collision.transform.position) <= boxCollider.size.x / 2.0f)
         //{
-        if ( collision.gameObject.name == ("kyassuru_0"))
+        if ( collision.gameObject.name == ("Castle"))
         {
             StartCoroutine("AttackWait");
 
             isCastel = true;
-           // CastelManager castel = GameObject.Find(collision.gameObject.name).GetComponent<CastelManager>();
-            //castel.CastelDamage();
+            collision.gameObject.GetComponent<CastleManager>().Damage();
         }
         else if (collision.gameObject.tag == ("Target"))
         {            //ターゲット名からターゲットとそのスクリプトを取得

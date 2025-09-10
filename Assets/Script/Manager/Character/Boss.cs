@@ -11,7 +11,6 @@ public class Boss:Character_Controller
     
     protected override void Die()
     {
-        Debug.Log("€‚ñ‚¾III");
         base.Die();
         gameManager.Die(this.name);
 
