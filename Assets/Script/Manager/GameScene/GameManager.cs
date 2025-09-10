@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
    // [SerializeField] GameObject Castel;
     [SerializeField] GameObject Boss;
     bool BossInstantFlg = false;
+    [SerializeField] float BossInstantTime;
+    [SerializeField] float instantTimer = 0;
 
     [SerializeField] GameObject ClearText;
     [SerializeField] GameObject ClearObj;
@@ -15,8 +17,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject MapReload;
 
-    [SerializeField] float BossInstantTime;
-    [SerializeField] float instantTimer=0;
+    [SerializeField] GenerationManager GenerationManager;
+    [SerializeField] ItemBoxManager ItemBoxManager;
 
     private void Update()
     {
@@ -52,7 +54,10 @@ public class GameManager : MonoBehaviour
             ClearText.SetActive(true);
             ClearObj.SetActive(true);
         }
+        Time.timeScale = 0;
         //マップに戻るを表示
         MapReload.SetActive(true);
+
+        ItemBoxManager.StopItemBox();
     }
 }

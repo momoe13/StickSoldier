@@ -366,13 +366,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boss: {fileID: 3167825287689010028, guid: 66a0b466d1eeaba4284fc1afc8d852a8, type: 3}
+  BossInstantTime: 10
+  instantTimer: 0
   ClearText: {fileID: 1692949373}
   ClearObj: {fileID: 934387406}
   FailText: {fileID: 439905550}
   FailObj: {fileID: 0}
   MapReload: {fileID: 1112923138}
-  BossInstantTime: 10
-  instantTimer: 0
+  GenerationManager: {fileID: 0}
 --- !u!1001 &602941054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -808,7 +809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &934387407
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1181,13 +1182,14 @@ GameObject:
   - component: {fileID: 1112923141}
   - component: {fileID: 1112923140}
   - component: {fileID: 1112923139}
+  - component: {fileID: 1112923143}
   m_Layer: 5
   m_Name: MapReload
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1112923139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1231,7 +1233,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1112923140}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1112923143}
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: MapLordScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1112923140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1290,6 +1304,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0.5, y: -89.8}
   m_SizeDelta: {x: 195, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1112923143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112923138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb492ffbfe95dd548a23fd3a28cc037c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1158865556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,7 +1905,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2313309980954027664, guid: be63f06506022304a9f8e9e79326c9b5, type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4321569811181709456, guid: be63f06506022304a9f8e9e79326c9b5, type: 3}
       propertyPath: m_Pivot.x
@@ -1967,7 +1993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4328307626442554132, guid: be63f06506022304a9f8e9e79326c9b5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2235,7 +2261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3215050650599801471, guid: c413f2a6e9246394dbb6b7674b23b2e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.56
+      value: -7.43
       objectReference: {fileID: 0}
     - target: {fileID: 3215050650599801471, guid: c413f2a6e9246394dbb6b7674b23b2e4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2411,6 +2437,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3157748432763592890, guid: 599a022f733cae143983af44fb563262, type: 3}
+      propertyPath: _count
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157748432763592890, guid: 599a022f733cae143983af44fb563262, type: 3}
       propertyPath: generate
       value: 
       objectReference: {fileID: 1004420432}
@@ -2424,11 +2454,15 @@ PrefabInstance:
       objectReference: {fileID: 1290777415}
     - target: {fileID: 3157748432763592890, guid: 599a022f733cae143983af44fb563262, type: 3}
       propertyPath: itemSpawnInterval
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3201333798319283271, guid: 599a022f733cae143983af44fb563262, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156104357036438355, guid: 599a022f733cae143983af44fb563262, type: 3}
+      propertyPath: _count
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4156104357036438355, guid: 599a022f733cae143983af44fb563262, type: 3}
       propertyPath: generate

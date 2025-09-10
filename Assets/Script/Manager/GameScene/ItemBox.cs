@@ -85,4 +85,11 @@ public class ItemBox : MonoBehaviour
             }
         }
     }
+
+    public void StopBox()
+    {
+        Debug.Log("�Ă΂ꂽ");
+        BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
+        boxCollider2D.enabled = false;
+    }
 }
