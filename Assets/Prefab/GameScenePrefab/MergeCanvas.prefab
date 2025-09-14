@@ -180,10 +180,10 @@ MonoBehaviour:
   MergeNumber: 0d000000
   BoxNumber: 3
   generate: {fileID: 0}
-  _count: 0
+  _count: 5
   countText: {fileID: 0}
-  itemSpawnInterval: 0
-  spriteRenderer: {fileID: 0}
+  itemSpawnInterval: 2
+  spriteRenderer: {fileID: 5705738064347019861}
 --- !u!1 &716078881439570064
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,8 +615,8 @@ MonoBehaviour:
   generate: {fileID: 0}
   _count: 0
   countText: {fileID: 0}
-  itemSpawnInterval: 0
-  spriteRenderer: {fileID: 0}
+  itemSpawnInterval: 5
+  spriteRenderer: {fileID: 9176995358150674198}
 --- !u!1 &3201333798319283271
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1455998060893491152}
+  - component: {fileID: 8120183121300611059}
   m_Layer: 0
   m_Name: PouchBox
   m_TagString: Untagged
@@ -652,6 +653,18 @@ Transform:
   - {fileID: 1781781557321911550}
   m_Father: {fileID: 2713804053761190212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8120183121300611059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3201333798319283271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7632a269eef4a4dabf8b9c334a6922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4166280779578675088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,8 +1021,8 @@ MonoBehaviour:
   generate: {fileID: 0}
   _count: 0
   countText: {fileID: 0}
-  itemSpawnInterval: 0
-  spriteRenderer: {fileID: 0}
+  itemSpawnInterval: 5
+  spriteRenderer: {fileID: 3208946935344663735}
 --- !u!1 &5916082677316096404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,10 +1178,10 @@ MonoBehaviour:
   MergeNumber: 0d0000000b000000
   BoxNumber: 1
   generate: {fileID: 0}
-  _count: 0
+  _count: 5
   countText: {fileID: 0}
-  itemSpawnInterval: 0
-  spriteRenderer: {fileID: 0}
+  itemSpawnInterval: 2
+  spriteRenderer: {fileID: 163059743522636742}
 --- !u!212 &163059743522636742
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     {
         if (!BossInstantFlg)
         {
-            instantTimer = Time.time;
+            instantTimer += Time.deltaTime;
             if (instantTimer > BossInstantTime)
             {
                 //É{ÉXê∂ê¨
