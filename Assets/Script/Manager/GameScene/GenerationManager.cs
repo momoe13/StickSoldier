@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,13 +10,13 @@ public class GenerationManager : MonoBehaviour
 
     [SerializeField]
     int maxEne=3;
-    float gameTime = 0;
 
 
     //敵キャラの生成数を保存する
     [SerializeField]
     List<GameObject> EnemyBox;
     int eneType = 0;
+    bool isSpawning = false;//まとめて生成されないようフラグで管理
 
     //ボスが死んだか
     bool isBossDie = false;
@@ -42,20 +43,23 @@ public class GenerationManager : MonoBehaviour
         }
 
         //敵がｎ体以下なら生成
-        if(EnemyBox.Count<maxEne)
+        if(!isSpawning && EnemyBox.Count<maxEne)
         {
-            EnemyGeneration();
+            StartCoroutine("EnemyGeneration");
         }
     }
 
     //敵生成
-    private void EnemyGeneration()
+    IEnumerator EnemyGeneration()
     {
+        isSpawning = true;
+        yield return new WaitForSeconds(0.3f);
         GameObject ene= Instantiate(CreatePrefabs[eneType], GetEnemySpawnPos(), Quaternion.identity);
        
         EnemyBox.Add(ene);
         eneType++;
         if (eneType > 1) eneType = 0;
+        isSpawning= false;
     }
 
     private Vector2 GetEnemySpawnPos()

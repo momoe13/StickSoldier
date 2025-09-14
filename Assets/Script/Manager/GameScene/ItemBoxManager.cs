@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ItemBoxManager : MonoBehaviour
 {
+    //全アイテムボックスを無効にする
     public void StopItemBox()
     {
         Transform children = this.GetComponentInChildren<Transform>();

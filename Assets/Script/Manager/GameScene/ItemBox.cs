@@ -53,8 +53,6 @@ public class ItemBox : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-
         int getItemNum=0;//取得した値を保存するもの
 
         //生成アイテムだったら値を取得
@@ -88,7 +86,6 @@ public class ItemBox : MonoBehaviour
 
     public void StopBox()
     {
-        Debug.Log("呼ばれた");
         BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
         boxCollider2D.enabled = false;
     }

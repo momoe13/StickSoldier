@@ -14,17 +14,17 @@ public class Mergeitem : MonoBehaviour
     {
         //マウス追従
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        // rb.MovePosition(mousePos);
+
         transform.position = mousePos;
     }
-    //private void OnMouseDrag()
-    //{
-    //}
+
     private void OnMouseUp()
     {
         rb.bodyType = RigidbodyType2D.Kinematic;
         StartCoroutine("Destroy");
     }
+
+    //アイテムボックスに当たり判定する暇を与えてからオブジェクト削除する
     IEnumerator Destroy()
     {
         yield return new WaitForSeconds(0.1f);

@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*Unity　放物線　とかで調べたものをChatGPTに２D用に設定してもらっています。
+ *  つまり加納に聞いても答えられない可能性が高いです。m(_ _)m <ｽﾐﾏｾﾝ
+ */
 public class Missile : MonoBehaviour
 {
          //射出オブジェクト

@@ -6,20 +6,24 @@ public class GameManager : MonoBehaviour
    // [SerializeField] GameObject Castel;
     [SerializeField] GameObject Boss;
     bool BossInstantFlg = false;
-    [SerializeField] float BossInstantTime;
-    [SerializeField] float instantTimer = 0;
+    [SerializeField] float BossInstantTime;//ボスを生成する時間
+     float instantTimer;                   //生成までのカウンター
 
-    [SerializeField] GameObject ClearText;
-    [SerializeField] GameObject ClearObj;
+    [SerializeField] GameObject ClearText;//防衛成功テキスト
+    [SerializeField] GameObject ClearObj;//シーン遷移用ボタン
 
-    [SerializeField] GameObject FailText;
-    [SerializeField] GameObject FailObj;
+    [SerializeField] GameObject FailText;//防衛失敗テキスト
+    [SerializeField] GameObject FailObj;//シーン再ロードボタン
 
-    [SerializeField] GameObject MapReload;
+    [SerializeField] GameObject MapReload;//マップに戻るボタン
 
     [SerializeField] GenerationManager GenerationManager;
     [SerializeField] ItemBoxManager ItemBoxManager;
 
+    private void Start()
+    {
+        instantTimer = 0f;
+    }
     private void Update()
     {
         if (!BossInstantFlg)
@@ -37,9 +41,10 @@ public class GameManager : MonoBehaviour
         BossInstantFlg = true;
         var parent = this.transform;
         Instantiate(Boss, this.transform.position, Quaternion.identity, parent);
-        //BGMをボス戦用に変更
+        //TODO:BGMをボス戦用に変更
     }
 
+    //死んだオブジェクトの名前で勝利/敗北判定
     public void Die(string name)
     {
         if (name == "Castle")

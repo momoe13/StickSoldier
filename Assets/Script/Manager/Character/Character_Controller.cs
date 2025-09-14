@@ -111,6 +111,7 @@ public class Character_Controller : MonoBehaviour
     {
         if (scale.y > 0)
         {
+            //縦に潰す
             pos = transform.position;
             pos.y -= Time.deltaTime;
             scale.y -= Time.deltaTime;
@@ -134,7 +135,6 @@ public class Character_Controller : MonoBehaviour
         }
         else if (collision.gameObject.tag == ("Target"))
         {   //ターゲット名からターゲットとそのスクリプトを取得
-            //attackTarget = GameObject.Find(collision.gameObject.name).GetComponent<Character_Controller>();
             attackTarget = collision.GetComponentInParent<Character_Controller>();
             StartCoroutine("MovingCancel");
         }
@@ -150,9 +150,7 @@ public class Character_Controller : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!gameObject.activeInHierarchy) return;
-        //if (collision.CompareTag(this.tag)) { return; }
         StartCoroutine("MovingStart");
-        //controller = null;
     }
 
     IEnumerator MovingStart()
